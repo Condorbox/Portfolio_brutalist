@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Portfolio | Neo-Brutalist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom cursor elements -->
+    <div class="custom-cursor" id="customCursor"></div>
+    <div class="cursor-dot" id="cursorDot"></div>
+
+    <div class="nav" id="nav-bar">
+        <div class="logo">
+            <div class="brutal-box" style="padding: 0.75rem 1.5rem;">
+                <strong style="font-family: var(--mono-font);">&lt;/&gt;</strong>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#projects" class="nav-link">PROJECTS</a>
+            <a href="#about" class="nav-link">ABOUT</a>
+            <a href="#contact" class="nav-link">CONTACT</a>
+        </div>
+        <button class="theme-toggle" id="themeToggle">🌙</button>
+    </div>
+
+    <header>
+        <h1 class="hero-title">JANE DEVELOPER</h1>
+        <h2>Full-Stack Engineer & Problem Solver</h2>
+        <p class="tagline">I write code that <span class="emphasis">works</span>. Sometimes, it even looks good.</p>
+    </header>
+
+    <section class="brutal-box span-6 mb-1 glitch">
+        <p style="font-size: 1.5rem; line-height: 1.5; font-family: var(--mono-font);">
+            I build <strong>clean</strong>, <strong>efficient</strong>, and <strong>user-focused</strong> 
+            web applications with modern technologies. Currently working on systems that 
+            <span style="background-color: var(--accent); padding: 0 0.25rem; position: relative;">
+                make a difference
+                <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--accent); mix-blend-mode: difference; opacity: 0.1;"></span>
+            </span>
+        </p>
+    </section>
+
+    <section id="projects" style="margin: 3rem 0;">
+        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);">Selected Projects</h2>
+        
+        <div class="bento-grid">
+            <div class="brutal-box span-3">
+                <div class="project-title">E-commerce Platform</div>
+                <div class="project-desc">Built a fully responsive e-commerce platform with payment processing, inventory management, and analytics dashboard.</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">Stripe</span>
+                </div>
+                <a href="#" class="brutal-button">View Project</a>
+            </div>
+            
+            <div class="brutal-box span-3">
+                <div class="project-title">Task Management App</div>
+                <div class="project-desc">Designed and developed a productivity tool for remote teams with real-time updates and collaborative features.</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Vue.js</span>
+                    <span class="tech-badge">Firebase</span>
+                    <span class="tech-badge">Tailwind CSS</span>
+                </div>
+                <a href="#" class="brutal-button">View Project</a>
+            </div>
+            
+            <div class="brutal-box span-4">
+                <div class="project-title">AI-Powered Content Platform</div>
+                <div class="project-desc">Created a platform that leverages machine learning to generate and optimize content for marketing teams. Includes analytics, A/B testing, and integration with popular CMS platforms.</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">Django</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">AWS</span>
+                </div>
+                <a href="#" class="brutal-button">View Project</a>
+            </div>
+            
+            <div class="brutal-box span-2">
+                <div class="project-title">Finance Tracker</div>
+                <div class="project-desc">Personal finance application with budgeting tools, expense tracking, and visualization of spending habits.</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">React Native</span>
+                    <span class="tech-badge">Express</span>
+                    <span class="tech-badge">Plaid API</span>
+                </div>
+                <a href="#" class="brutal-button">View Project</a>
+            </div>
+            
+            <div class="brutal-box span-2 tall">
+                <div class="project-title">Community Forum</div>
+                <div class="project-desc">Built a modern discussion platform with real-time updates, markdown support, and robust moderation tools.</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">Next.js</span>
+                    <span class="tech-badge">GraphQL</span>
+                    <span class="tech-badge">Prisma</span>
+                </div>
+                <a href="#" class="brutal-button">View Project</a>
+            </div>
+            
+            <div class="brutal-box span-2">
+                <div class="project-title">Interactive Data Viz</div>
+                <div class="project-desc">Created interactive data visualizations for scientific researchers to explore complex datasets.</div>
+                <div class="tech-stack">
+                    <span class="tech-badge">D3.js</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">TypeScript</span>
+                </div>
+                <a href="#" class="brutal-button">View Project</a>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" style="margin: 3rem 0;">
+        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);">About Me</h2>
+        
+        <div class="bento-grid">
+            <div class="brutal-box span-2">
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Skills</h3>
+                <ul style="list-style-type: none; font-family: var(--mono-font);">
+                    <li style="margin-bottom: 0.5rem;">✓ Frontend Development</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Backend Architecture</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Database Design</li>
+                    <li style="margin-bottom: 0.5rem;">✓ API Development</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Cloud Infrastructure</li>
+                    <li style="margin-bottom: 0.5rem;">✓ Performance Optimization</li>
+                </ul>
+            </div>
+            
+            <div class="brutal-box span-4">
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">My Journey</h3>
+                <p style="line-height: 1.6; margin-bottom: 1rem;">
+                    I started coding when I was 14, building simple games and websites. After studying Computer Science, 
+                    I worked at several startups where I honed my skills in full-stack development.
+                </p>
+                <p style="line-height: 1.6;">
+                    Now, I specialize in building scalable web applications with a focus on performance and user experience. 
+                    When I'm not coding, you'll find me hiking, reading sci-fi, or experimenting with new technologies.
+                </p>
+            </div>
+            
+            <div class="brutal-box span-3">
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Work Experience</h3>
+                <div style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <strong style="font-family: var(--mono-font);">Senior Software Engineer</strong>
+                        <span style="font-family: var(--mono-font);">2022 - Present</span>
+                    </div>
+                    <div>TechNova Solutions</div>
+                </div>
+                
+                <div style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <strong style="font-family: var(--mono-font);">Full-Stack Developer</strong>
+                        <span style="font-family: var(--mono-font);">2019 - 2022</span>
+                    </div>
+                    <div>Digital Frontiers</div>
+                </div>
+                
+                <div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <strong style="font-family: var(--mono-font);">Frontend Developer</strong>
+                        <span style="font-family: var(--mono-font);">2017 - 2019</span>
+                    </div>
+                    <div>WebCraft Studio</div>
+                </div>
+            </div>
+            
+            <div class="brutal-box span-3">
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Education</h3>
+                <div style="margin-bottom: 1rem;">
+                    <strong style="font-family: var(--mono-font);">M.S. Computer Science</strong>
+                    <div>Stanford University, 2017</div>
+                </div>
+                
+                <div>
+                    <strong style="font-family: var(--mono-font);">B.S. Computer Science</strong>
+                    <div>MIT, 2015</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" style="margin: 3rem 0;">
+        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);">Get In Touch</h2>
+        
+        <div class="bento-grid">
+            <div class="brutal-box span-4">
+                <form id="contactForm">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: bold; font-family: var(--mono-font);">Name</label>
+                        <input type="text" id="name" class="brutal-input" required>
+                        <div id="nameError" class="error-message" style="display: none;">Please enter your name</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; font-family: var(--mono-font);">Email</label>
+                        <input type="email" id="email" class="brutal-input" required>
+                        <div id="emailError" class="error-message" style="display: none;">Please enter a valid email</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: bold; font-family: var(--mono-font);">Message</label>
+                        <textarea id="message" rows="5" class="brutal-input" required></textarea>
+                        <div id="messageError" class="error-message" style="display: none;">Please enter a message</div>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn" class="brutal-button">Send Message</button>
+                </form>
+            </div>
+            
+            <div class="brutal-box span-2">
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Contact Info</h3>
+                <p style="margin-bottom: 0.5rem; font-family: var(--mono-font);"><strong>Email:</strong> jane@developer.com</p>
+                <p style="margin-bottom: 0.5rem; font-family: var(--mono-font);"><strong>Location:</strong> San Francisco, CA</p>
+                <p style="margin-bottom: 1.5rem; font-family: var(--mono-font);"><strong>Availability:</strong> Open to freelance projects</p>
+                
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#" class="brutal-button" style="margin-top: 0;">GitHub</a>
+                    <a href="#" class="brutal-button" style="margin-top: 0;">LinkedIn</a>
+                    <a href="#" class="brutal-button" style="margin-top: 0;">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer style="margin-top: 3rem; padding-top: 2rem; border-top: var(--border);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div style="font-family: var(--mono-font);">© 2025 Jane Developer. All rights reserved.</div>
+            <a href="#nav-bar" class="brutal-button">Back to Top</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
