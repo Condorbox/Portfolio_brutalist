@@ -72,7 +72,7 @@ body::before {
 }
 
 .brutal-box:hover::before {
-    border-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(var(--primary), 0.2);
 }
 
 .brutal-button {
@@ -532,7 +532,7 @@ h2 {
     .menu-btn {
         display: block;
         background: none;
-        border: none;
+        border: var(--border);
         cursor: pointer;
         font-family: var(--mono-font);
         font-size: 1.2rem;

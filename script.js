@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
             
-            // Optional: Add "smash" animation to the menu button when clicked
             menuToggle.classList.add('smash');
             setTimeout(() => {
                 menuToggle.classList.remove('smash');
