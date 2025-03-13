@@ -485,3 +485,71 @@ h2 {
     --gray: #1a1a1a;
     --shadow: 4px 4px 0px rgba(255, 255, 255, 1);
 }
+
+/* Mobile Navigation Styles */
+.menu-btn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+        gap: 1rem;
+    }
+    
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.3s ease forwards;
+    }
+    
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .logo {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start; 
+        align-items: center;
+    }
+    
+    .menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: var(--mono-font);
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-left: 1rem; 
+        color: var(--primary);
+    }
+
+    .menu-btn span {
+        color: var(--primary);
+    }
+    
+    .theme-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0; 
+        z-index: 101;
+    }
+}

@@ -15,6 +15,34 @@ document.addEventListener('mousemove', (e) => {
     cursorDot.style.top = `${clientY}px`;
 });
 
+// menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            // Optional: Add "smash" animation to the menu button when clicked
+            menuToggle.classList.add('smash');
+            setTimeout(() => {
+                menuToggle.classList.remove('smash');
+            }, 500);
+        });
+        
+        // Close menu when a nav link is clicked
+        const links = navLinks.querySelectorAll('.nav-link');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+    }
+});
+
 // Expand cursor on interactive elements
 const interactiveElements = document.querySelectorAll('a, button, input, textarea');
 interactiveElements.forEach(el => {
