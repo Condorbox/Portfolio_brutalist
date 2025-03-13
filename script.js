@@ -6,40 +6,13 @@ document.addEventListener('mousemove', (e) => {
     const { clientX, clientY } = e;
     
     // Add slight delay for trailing effect
-    setTimeout(() => {
+    requestAnimationFrame(() => {
         customCursor.style.left = `${clientX}px`;
         customCursor.style.top = `${clientY}px`;
     }, 50);
     
     cursorDot.style.left = `${clientX}px`;
     cursorDot.style.top = `${clientY}px`;
-});
-
-// menu toggle
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-            
-            menuToggle.classList.add('smash');
-            setTimeout(() => {
-                menuToggle.classList.remove('smash');
-            }, 500);
-        });
-        
-        // Close menu when a nav link is clicked
-        const links = navLinks.querySelectorAll('.nav-link');
-        links.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
-    }
 });
 
 // Expand cursor on interactive elements
@@ -60,14 +33,66 @@ interactiveElements.forEach(el => {
     });
 });
 
+// menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            
+            menuToggle.classList.add('smash');
+            setTimeout(() => {
+                menuToggle.classList.remove('smash');
+            }, 500);
+        });
+        
+        // Close menu when clicking outside of it
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close menu when a navigation link is clicked
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.classList.contains('nav-link')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    }
+});
 
 // Dark mode toggle
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
 
+// Function to apply the theme
+const applyTheme = (theme) => {
+    if (theme === 'dark') {
+        body.classList.add('dark-theme');
+        themeToggle.textContent = '☀️';
+    } else {
+        body.classList.remove('dark-theme');
+        themeToggle.textContent = '🌙';
+    }
+};
+
+// Check localStorage first, then system preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    applyTheme(savedTheme);
+} else {
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(systemPrefersDark ? 'dark' : 'light');
+}
+
+// Toggle theme and save preference
 themeToggle.addEventListener('click', () => {
-    body.classList.toggle('dark-theme');
-    themeToggle.textContent = body.classList.contains('dark-theme') ? '☀️' : '🌙';
+    const newTheme = body.classList.toggle('dark-theme') ? 'dark' : 'light';
+    localStorage.setItem('theme', newTheme);
+    applyTheme(newTheme);
 });
 
 // Smooth scrolling for navigation
@@ -127,5 +152,3 @@ boxes.forEach(box => {
 // Run on page load and scroll
 window.addEventListener('load', fadeInOnScroll);
 window.addEventListener('scroll', fadeInOnScroll);
-
-console.log("Hello");
