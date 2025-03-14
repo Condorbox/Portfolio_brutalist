@@ -111,7 +111,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Form submission (prevent default for demo)
-const contactForm = document.getElementById('contactForm');
+/*const contactForm = document.getElementById('contactForm');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -125,7 +125,7 @@ contactForm.addEventListener('submit', (e) => {
     // Show submission feedback
     alert('Thanks for your message! I\'ll get back to you soon.');
     contactForm.reset();
-});
+});*/
 
 // Simple animation for project cards
 const boxes = document.querySelectorAll('.brutal-box');
@@ -152,3 +152,97 @@ boxes.forEach(box => {
 // Run on page load and scroll
 window.addEventListener('load', fadeInOnScroll);
 window.addEventListener('scroll', fadeInOnScroll);
+
+// Form submission email
+const emailjsUserID = 'placeholder'; 
+const emailjsServiceID = 'placeholder'; 
+const emailjsTemplateID = 'placeholder';
+
+// Helper function to validate email
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+// Get the form by its ID
+const form = document.getElementById('contactForm');
+const msg = document.createElement('div'); // Create a message element
+msg.id = 'responseMessage';
+msg.style.marginTop = '1rem';
+form.parentNode.insertBefore(msg, form.nextSibling); // Insert after the form
+
+// Initialize EmailJS
+document.addEventListener('DOMContentLoaded', function() {
+    emailjs.init(emailjsUserID);
+});
+  
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Basic form validation
+    const name = document.getElementById('name');
+    const email = document.getElementById('email');
+    const message = document.getElementById('message');
+    let isValid = true;
+    
+    // Check name
+    if (!name.value.trim()) {
+      document.getElementById('nameError').style.display = 'block';
+      isValid = false;
+    } else {
+      document.getElementById('nameError').style.display = 'none';
+    }
+    
+    // Check email
+    if (!email.value.trim() || !isValidEmail(email.value)) {
+      document.getElementById('emailError').style.display = 'block';
+      isValid = false;
+    } else {
+      document.getElementById('emailError').style.display = 'none';
+    }
+    
+    // Check message
+    if (!message.value.trim()) {
+      document.getElementById('messageError').style.display = 'block';
+      isValid = false;
+    } else {
+      document.getElementById('messageError').style.display = 'none';
+    }
+    
+    if (!isValid) return;
+    
+    // Disable the submit button and show sending status
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    
+    // Send the form using EmailJS
+    emailjs.sendForm(
+      emailjsServiceID, 
+      emailjsTemplateID, 
+      form
+    )
+    .then(function(response) {
+      console.log('Message sent successfully', response);
+      msg.innerHTML = "Message sent successfully!";
+      msg.style.color = 'green';
+      form.reset();
+    })
+    .catch(function(error) {
+      console.error('Error when sending mail', error);
+      msg.innerHTML = "Error when sending message. Please try again.";
+      msg.style.color = 'red';
+    })
+    .finally(function() {
+      // Re-enable the button
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+      
+      // Clear the response message after 5 seconds
+      setTimeout(function() {
+        msg.innerHTML = "";
+      }, 5000);
+    });
+});
+  
