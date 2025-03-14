@@ -36,23 +36,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      
-      - name: Create .env file
+        
+      - name: Replace environment variables in JavaScript files
         run: |
-          echo "EMAILJS_USER_ID=${{ secrets.EMAILJS_USER_ID }}" >> .env
-          echo "EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }}" >> .env
-          echo "EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> .env
-        
-      - name: Install dependencies
-        run: npm ci
-        
-      - name: Build with environment variables
-        run: npm run build
-        env:
-          EMAILJS_USER_ID: ${{ secrets.EMAILJS_USER_ID }}
-          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
-
+          sed -i 's/process.env.EMAILJS_USER_ID || .*$/process.env.EMAILJS_USER_ID || "${{ secrets.EMAILJS_USER_ID }}";/g' js/config.js
+          sed -i 's/process.env.EMAILJS_SERVICE_ID || .*$/process.env.EMAILJS_SERVICE_ID || "${{ secrets.EMAILJS_SERVICE_ID }}";/g' js/config.js
+          sed -i 's/process.env.EMAILJS_TEMPLATE_ID || .*$/process.env.EMAILJS_TEMPLATE_ID || "${{ secrets.EMAILJS_TEMPLATE_ID }}";/g' js/config.js
+  
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
