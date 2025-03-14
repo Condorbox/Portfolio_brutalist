@@ -110,23 +110,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Form submission (prevent default for demo)
-/*const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const message = document.getElementById('message').value;
-    
-    // In a real application, you would send this data to your server
-    console.log('Form submitted:', { name, email, message });
-    
-    // Show submission feedback
-    alert('Thanks for your message! I\'ll get back to you soon.');
-    contactForm.reset();
-});*/
-
 // Simple animation for project cards
 const boxes = document.querySelectorAll('.brutal-box');
 

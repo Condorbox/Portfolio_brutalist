@@ -196,19 +196,19 @@
                 <form id="contactForm">
                     <div style="margin-bottom: 1rem;">
                         <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: bold; font-family: var(--mono-font);">Name</label>
-                        <input type="text" id="name" class="brutal-input" required>
+                        <input type="text" name="name" placeholder="Your name" id="name" class="brutal-input" required>
                         <div id="nameError" class="error-message" style="display: none;">Please enter your name</div>
                     </div>
                     
                     <div style="margin-bottom: 1rem;">
                         <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: bold; font-family: var(--mono-font);">Email</label>
-                        <input type="email" id="email" class="brutal-input" required>
+                        <input type="email" name="email" placeholder="Your email" id="email" class="brutal-input" required>
                         <div id="emailError" class="error-message" style="display: none;">Please enter a valid email</div>
                     </div>
                     
                     <div style="margin-bottom: 1rem;">
                         <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: bold; font-family: var(--mono-font);">Message</label>
-                        <textarea id="message" rows="5" class="brutal-input" required></textarea>
+                        <textarea name="message" id="message" rows="5" class="brutal-input" required></textarea>
                         <div id="messageError" class="error-message" style="display: none;">Please enter a message</div>
                     </div>
                     
