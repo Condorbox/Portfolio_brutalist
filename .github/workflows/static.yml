@@ -36,11 +36,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-          - name: Create .env file
-          run: |
-            echo "EMAILJS_USER_ID=${{ secrets.EMAILJS_USER_ID }}" >> .env
-            echo "EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }}" >> .env
-            echo "EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> .env
+      
+      - name: Create .env file
+        run: |
+          echo "EMAILJS_USER_ID=${{ secrets.EMAILJS_USER_ID }}" >> .env
+          echo "EMAILJS_SERVICE_ID=${{ secrets.EMAILJS_SERVICE_ID }}" >> .env
+          echo "EMAILJS_TEMPLATE_ID=${{ secrets.EMAILJS_TEMPLATE_ID }}" >> .env
         
       - name: Install dependencies
         run: npm ci
