@@ -28,20 +28,16 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-        
-      - name: Replace environment variables in JavaScript files
+      - name: Replace API keys in JavaScript files
         run: |
-          sed -i 's/process.env.EMAILJS_USER_ID || .*$/process.env.EMAILJS_USER_ID || "${{ secrets.EMAILJS_USER_ID }}";/g' js/config.js
-          sed -i 's/process.env.EMAILJS_SERVICE_ID || .*$/process.env.EMAILJS_SERVICE_ID || "${{ secrets.EMAILJS_SERVICE_ID }}";/g' js/config.js
-          sed -i 's/process.env.EMAILJS_TEMPLATE_ID || .*$/process.env.EMAILJS_TEMPLATE_ID || "${{ secrets.EMAILJS_TEMPLATE_ID }}";/g' js/config.js
+          sed -i 's|user_placeholder|${{ secrets.EMAILJS_USER_ID }}|g' script.js
+          sed -i 's|service_placeholder|${{ secrets.EMAILJS_SERVICE_ID }}|g' script.js
+          sed -i 's|template_placeholder|${{ secrets.EMAILJS_TEMPLATE_ID }}|g' script.js
   
       - name: Setup Pages
         uses: actions/configure-pages@v5
