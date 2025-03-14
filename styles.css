@@ -486,6 +486,21 @@ h2 {
     --shadow: 4px 4px 0px rgba(255, 255, 255, 1);
 }
 
+/* Special CV button styling */
+.cv-button {
+    background-color: var(--secondary-accent);
+    border-width: 4px;
+    padding: 0.85rem 1.75rem;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;         
+    align-items: center;          
+    justify-content: center;      
+    text-align: center;           
+}
+
 /* Mobile Navigation Styles */
 .menu-btn {
     display: none;
