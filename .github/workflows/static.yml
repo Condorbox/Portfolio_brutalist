@@ -32,12 +32,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Replace API keys in JavaScript files
-        run: |
-          sed -i 's|user_placeholder|${{ secrets.EMAILJS_USER_ID }}|g' script.js
-          sed -i 's|service_placeholder|${{ secrets.EMAILJS_SERVICE_ID }}|g' script.js
-          sed -i 's|template_placeholder|${{ secrets.EMAILJS_TEMPLATE_ID }}|g' script.js
   
       - name: Setup Pages
         uses: actions/configure-pages@v5
