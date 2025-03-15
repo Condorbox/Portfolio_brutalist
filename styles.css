@@ -410,6 +410,13 @@ h2 {
     background-color: var(--secondary);
     font-family: var(--mono-font);
     transition: all 0.2s ease;
+    color: var(--primary);
+}
+
+textarea.brutal-input {
+    resize: vertical; 
+    min-height: 100px; 
+    max-height: 300px; 
 }
 
 .brutal-input:focus {
@@ -446,6 +453,13 @@ h2 {
         transparent 2px,
         transparent 4px
     );
+}
+
+.brutal-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    font-family: var(--mono-font);
 }
 
 /* Glitch effect */
