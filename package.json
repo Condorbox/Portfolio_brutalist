@@ -1,0 +1,23 @@
+{
+  "name": "portfolio_brutalist",
+  "version": "1.0.0",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Condorbox/Portfolio_brutalist.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Condorbox/Portfolio_brutalist/issues"
+  },
+  "homepage": "https://github.com/Condorbox/Portfolio_brutalist#readme",
+  "description": "",
+  "dependencies": {
+    "@emailjs/nodejs": "^5.0.2"
+  }
+}
