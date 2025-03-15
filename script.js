@@ -149,11 +149,7 @@ msg.id = 'responseMessage';
 msg.style.marginTop = '1rem';
 form.parentNode.insertBefore(msg, form.nextSibling); // Insert after the form
 
-// Initialize EmailJS
-document.addEventListener('DOMContentLoaded', function() {
-    emailjs.init(emailjsUserID);
-});
-  
+// Send mail  
 form.addEventListener('submit', async function(e) {
     e.preventDefault();
     

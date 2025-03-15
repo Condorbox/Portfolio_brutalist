@@ -18,6 +18,7 @@
   "homepage": "https://github.com/Condorbox/Portfolio_brutalist#readme",
   "description": "",
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@emailjs/nodejs": "^5.0.2"
   }
 }
