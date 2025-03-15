@@ -137,9 +137,9 @@ window.addEventListener('load', fadeInOnScroll);
 window.addEventListener('scroll', fadeInOnScroll);
 
 // Form submission email
-const emailjsUserID = process.env.EMAILJS_USER_ID || 'user_placeholder'; 
-const emailjsServiceID = process.env.EMAILJS_SERVICE_ID || 'service_placeholder'; 
-const emailjsTemplateID = process.env.EMAILJS_TEMPLATE_ID || 'template_placeholder'; 
+const emailjsUserID = window.envConfig.EMAILJS_USER_ID || 'user_placeholder'; 
+const emailjsServiceID = window.envConfig.EMAILJS_SERVICE_ID || 'service_placeholder'; 
+const emailjsTemplateID = window.envConfig.EMAILJS_TEMPLATE_ID || 'template_placeholder'; 
 
 // Helper function to validate email
 function isValidEmail(email) {
