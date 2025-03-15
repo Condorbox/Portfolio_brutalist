@@ -236,11 +236,15 @@
     
     <footer style="margin-top: 3rem; padding-top: 2rem; border-top: var(--border);">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <div style="font-family: var(--mono-font);">© 2025 Manuel Developer. All rights reserved.</div>
+            <div style="font-family: var(--mono-font);">© <span id="current-year"></span> Manuel Developer. All rights reserved.</div>
             <a href="#nav-bar" class="brutal-button">Back to Top</a>
         </div>
     </footer>
 
     <script src="script.js"></script>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
