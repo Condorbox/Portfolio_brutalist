@@ -136,11 +136,6 @@ boxes.forEach(box => {
 window.addEventListener('load', fadeInOnScroll);
 window.addEventListener('scroll', fadeInOnScroll);
 
-// Form submission email
-const emailjsUserID = window.envConfig.EMAILJS_USER_ID || 'user_placeholder'; 
-const emailjsServiceID = window.envConfig.EMAILJS_SERVICE_ID || 'service_placeholder'; 
-const emailjsTemplateID = window.envConfig.EMAILJS_TEMPLATE_ID || 'template_placeholder'; 
-
 // Helper function to validate email
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -159,8 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
     emailjs.init(emailjsUserID);
 });
   
-
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', async function(e) {
     e.preventDefault();
     
     // Basic form validation
@@ -200,20 +194,33 @@ form.addEventListener('submit', function(e) {
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending...';
     
-    // Send the form using EmailJS
-    emailjs.sendForm(
-      emailjsServiceID, 
-      emailjsTemplateID, 
-      form
-    )
+    fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(Object.fromEntries(new FormData(form))),
+    })
     .then(function(response) {
-      console.log('Message sent successfully', response);
+      if (!response.ok) {
+        return response.json().then(data => {
+          throw new Error(data.error || 'Server Error');
+        });
+      }
+
+      return response.json();
+    })
+    .then(function(data) {
+      console.log('Message sent successfully', data);
+      
       msg.innerHTML = "Message sent successfully!";
       msg.style.color = 'green';
+        
       form.reset();
     })
     .catch(function(error) {
       console.error('Error when sending mail', error);
+      
       msg.innerHTML = "Error when sending message. Please try again.";
       msg.style.color = 'red';
     })
@@ -221,7 +228,7 @@ form.addEventListener('submit', function(e) {
       // Re-enable the button
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send Message';
-      
+       
       // Clear the response message after 5 seconds
       setTimeout(function() {
         msg.innerHTML = "";
