@@ -9,6 +9,7 @@
     --body-font: "Inter", "Helvetica Neue", Arial, sans-serif;
     --heading-font: "Space Grotesk", monospace;
     --mono-font: "IBM Plex Mono", monospace;
+    --footer-border: 4px solid var(--primary);
 }
 
 * {
@@ -528,6 +529,8 @@ textarea.brutal-input {
     --secondary: #111111;
     --gray: #1a1a1a;
     --shadow: 4px 4px 0px rgba(255, 255, 255, 1);
+    --border: 3px solid #292829;
+    --footer-border: 4px solid var(--primary);
 }
 
 /* Special CV button styling */
@@ -543,6 +546,12 @@ textarea.brutal-input {
     align-items: center;          
     justify-content: center;      
     text-align: center;           
+}
+
+.brutal-footer {
+    margin-top: 3rem; 
+    padding-top: 2rem; 
+    border-top: var(--footer-border);
 }
 
 /* Mobile Navigation Styles */
