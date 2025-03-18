@@ -14,6 +14,7 @@
     <link rel="manifest" href="/files/favicon/site.webmanifest">
 </head>
 <body>
+    <p data-i18n="test">This is a test!</p>
     <!-- Custom cursor elements -->
     <div class="custom-cursor" id="customCursor"></div>
     <div class="cursor-dot" id="cursorDot"></div>
@@ -31,6 +32,15 @@
             <a href="#projects" class="nav-link">PROJECTS</a>
             <a href="#about" class="nav-link">ABOUT</a>
             <a href="#contact" class="nav-link">CONTACT</a>
+        </div>
+        <div class="language-switcher">
+            <select id="languageSelect">
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="zh">中文</option>
+            </select>
         </div>
         <button class="theme-toggle" id="themeToggle">🌙</button>
     </div>
@@ -177,12 +187,12 @@
             <div class="brutal-box span-3">
                 <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Education</h3>
                 <div style="margin-bottom: 1rem;">
-                    <strong style="font-family: var(--mono-font);">B.S Computational Mathematics</strong>
+                    <strong style="font-family: var(--mono-font);">B.E Computational Mathematics</strong>
                     <div>Jaume I University, 2022 - present</div>
                 </div>
                 
                 <div>
-                    <strong style="font-family: var(--mono-font);">B.S. Computer Science</strong>
+                    <strong style="font-family: var(--mono-font);">B.E Computer Engineering</strong>
                     <div>Jaume I University, 2020 - 2024</div>
                     <div>Mobility program at Sejong University in Seoul, South Korea, 2023 - 2024</div>
                     <div>Award for academic excellence, 2024</div>
@@ -228,6 +238,7 @@
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
                     <a href="https://github.com/Condorbox" target="_blank" class="brutal-button" style="margin-top: 0;">GitHub</a>
                     <a href="https://condorbox.itch.io/" target="_blank" class="brutal-button" style="margin-top: 0;">itch.io</a>
+                    <a href="https://condorbox.itch.io/" target="_blank" class="brutal-button" style="margin-top: 0;">LinkedIn</a>
                 </div>
                 <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
                     <a href="#" download class="brutal-button cv-button">

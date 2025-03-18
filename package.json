@@ -19,6 +19,8 @@
   "description": "",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@emailjs/nodejs": "^5.0.2"
+    "@emailjs/nodejs": "^5.0.2",
+    "cookie": "^1.0.2",
+    "i18n": "^0.15.1"
   }
 }
