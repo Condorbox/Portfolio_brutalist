@@ -69,6 +69,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const currentLocale = getCookie('locale') || 'en';
   languageSelect.value = currentLocale;
   
+  console.log("Debug -> " + document.cookie);
+
+  console.log("Lang: " + currentLocale + " --- func --- " + getCookie("locale"));
+  console.log("Select: " + languageSelect);
+  
   languageSelect.addEventListener('change', async () => {
     const selectedLanguage = languageSelect.value;
     
