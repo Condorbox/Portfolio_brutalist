@@ -33,8 +33,8 @@ interactiveElements.forEach(el => {
     });
 });
 
-// menu toggle
 document.addEventListener('DOMContentLoaded', function() {
+  // menu toggle
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
     
@@ -62,67 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
   }
-
-  const languageSelect = document.getElementById('languageSelect');
-  
-  // Set the initial value based on cookie if available if not eng
-  const currentLocale = getCookie('locale') || 'en';
-  languageSelect.value = currentLocale;
-  
-  console.log("Debug -> " + document.cookie);
-
-  console.log("Lang: " + currentLocale + " --- func --- " + getCookie("locale"));
-  console.log("Select: " + languageSelect);
-  
-  languageSelect.addEventListener('change', async () => {
-    const selectedLanguage = languageSelect.value;
-    
-    try {
-      const response = await fetch('/api/change-language', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ locale: selectedLanguage })
-      });
-      
-      if (response.ok) {
-        // Reload the page to apply the new language
-        window.location.reload();
-      } else {
-        console.error('Failed to change language');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  });
-  
-  // Function to translate elements with data-i18n attribute
-  translatePageElements();
 });
-
-// Helper function to get cookie value
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
-// Function to translate all elements with data-i18n attribute
-async function translatePageElements() {
-  const elementsToTranslate = document.querySelectorAll('[data-i18n]');
-
-  for (const element of elementsToTranslate) {
-    const key = element.getAttribute('data-i18n');
-    try {
-      const response = await fetch(`/api/translate?key=${key}`);
-      const data = await response.json();
-      element.textContent = data.translation;
-    } catch (error) {
-      console.error('Translation error for key:', key, error);
-    }
-  }
-}
 
 // Dark mode toggle
 const themeToggle = document.getElementById('themeToggle');
