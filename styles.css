@@ -656,3 +656,9 @@ textarea.brutal-input {
         margin-bottom: 1rem;
     }
 }
+
+@media (pointer: coarse) {
+    .custom-cursor, .cursor-dot {
+        display: none;
+    }
+}
