@@ -14,7 +14,6 @@
     <link rel="manifest" href="/files/favicon/site.webmanifest">
 </head>
 <body>
-    <p data-i18n="test">This is a test!</p>
     <!-- Custom cursor elements -->
     <div class="custom-cursor" id="customCursor"></div>
     <div class="cursor-dot" id="cursorDot"></div>
@@ -25,223 +24,228 @@
                 <strong style="font-family: var(--mono-font);">&lt;/&gt;</strong>
             </div>
             <button class="menu-btn brutal-box" id="menuToggle" style="padding: 0.5rem 1rem;">
-                <span>MENU</span>
+                <span data-i18n="menu">MENU</span>
             </button>
         </div>
         <div class="nav-links" id="navLinks">
-            <a href="#projects" class="nav-link">PROJECTS</a>
-            <a href="#about" class="nav-link">ABOUT</a>
-            <a href="#contact" class="nav-link">CONTACT</a>
+            <a href="#projects" class="nav-link" data-i18n="projects">PROJECTS</a>
+            <a href="#about" class="nav-link" data-i18n="about">ABOUT</a>
+            <a href="#contact" class="nav-link" data-i18n="contact">CONTACT</a>
         </div>
         <div class="language-switcher">
             <select id="languageSelect">
-              <option value="en">English</option>
-              <option value="es">Español</option>
-              <option value="fr">Français</option>
-              <option value="de">Deutsch</option>
-              <option value="zh">中文</option>
+              <option value="en" data-i18n="english">English</option>
+              <option value="es" data-i18n="spanish">Español</option>
             </select>
         </div>
         <button class="theme-toggle" id="themeToggle">🌙</button>
     </div>
     <header>
-        <h1 class="hero-title">Manuel Developer</h1>
-        <h2>Software Engineer & Game Developer</h2>
-        <p class="tagline">I write code that <span class="emphasis">works</span>. Sometimes, it even looks good.</p>
+        <h1 class="hero-title" data-i18n="hero_name">Manuel Developer</h1>
+        <h2 data-i18n="hero_title">Software Engineer & Game Developer</h2>
+        <p class="tagline">
+            <span data-i18n="tagline_start">I write code that</span> 
+            <span class="emphasis" data-i18n="tagline_highlight">works</span>. 
+            <span data-i18n="tagline_end">Sometimes, it even looks good.</span>
+        </p>
     </header>
 
     <section class="brutal-box span-6 mb-1 glitch">
         <p style="font-size: 1.5rem; line-height: 1.5; font-family: var(--mono-font);">
-            I build <strong>clean</strong>, <strong>efficient</strong>, and <strong>user-focused</strong> 
-            web applications with modern technologies. Currently working on systems that 
+            <span data-i18n="intro_start">I build</span> 
+            <strong data-i18n="intro_adj1">clean</strong>, 
+            <strong data-i18n="intro_adj2">efficient</strong>, 
+            <span data-i18n="intro_and">and</span> 
+            <strong data-i18n="intro_adj3">user-focused</strong> 
+            <span data-i18n="intro_middle">web applications with modern technologies. Currently working on systems that</span>
             <span style="background-color: var(--accent); padding: 0 0.25rem; position: relative;">
-                make a difference
+                <span data-i18n="intro_highlight">make a difference</span>
                 <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--accent); mix-blend-mode: difference; opacity: 0.1;"></span>
             </span>
         </p>
     </section>
 
     <section id="projects" style="margin: 3rem 0;">
-        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);">Selected Projects</h2>
+        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);" data-i18n="projects_intro">Selected Projects</h2>
         
         <div class="bento-grid">
             <div class="brutal-box span-3">
-                <div class="project-title">Spotify to YouTube Playlist Converter</div>
-                <div class="project-desc">A Python-based automation tool that convert a Spotify playlist to a YouTube playlist, with an option to download it.</div>
+                <div class="project-title" data-i18n="project1_title">Spotify to YouTube Playlist Converter</div>
+                <div class="project-desc" data-i18n="project1_desc">A Python-based automation tool that convert a Spotify playlist to a YouTube playlist, with an option to download it.</div>
                 <div class="tech-stack">
                     <span class="tech-badge">Python</span>
                     <span class="tech-badge">Spotipy</span>
                     <span class="tech-badge">Google APIs</span>
                     <span class="tech-badge">FFmpeg</span>
                 </div>
-                <a href="https://github.com/Condorbox/SpotifyToYoutube" target="_blank" class="brutal-button">View Project</a>
+                <a href="https://github.com/Condorbox/SpotifyToYoutube" target="_blank" class="brutal-button" data-i18n="view_project">View Project</a>
             </div>
             
             <div class="brutal-box span-3">
-                <div class="project-title">Behavior Trees</div>
-                <div class="project-desc">An AI system using Behavior Trees in Unity to create adaptive, intelligent NPCs capable of real-time decision-making based on environmental factors.</div>
+                <div class="project-title" data-i18n="project2_title">Behavior Trees</div>
+                <div class="project-desc" data-i18n="project2_desc">An AI system using Behavior Trees in Unity to create adaptive, intelligent NPCs capable of real-time decision-making based on environmental factors.</div>
                 <div class="tech-stack">
                     <span class="tech-badge">Unity</span>
                     <span class="tech-badge">C#</span>
                     <span class="tech-badge">AI</span>
                 </div>
-                <a href="https://github.com/Condorbox/BehaviorTree" target="_blank" class="brutal-button">View Project</a>
+                <a href="https://github.com/Condorbox/BehaviorTree" target="_blank" class="brutal-button" data-i18n="view_project">View Project</a>
             </div>
             
             <div class="brutal-box span-4">
-                <div class="project-title">Requiem of the Unseen</div>
-                <div class="project-desc">An enigmatic and atmospheric Lovecraftian metroidvania...</div>
+                <div class="project-title" data-i18n="project3_title">Requiem of the Unseen</div>
+                <div class="project-desc" data-i18n="project3_desc">An enigmatic and atmospheric Lovecraftian metroidvania...</div>
                 <div class="tech-stack">
                     <span class="tech-badge">Unity</span>
                     <span class="tech-badge">C#</span>
                     <span class="tech-badge">2D</span>
                 </div>
-                <a href="https://condorbox.itch.io/requiemoftheunseen" target="_blank" class="brutal-button">View Game</a>
+                <a href="https://condorbox.itch.io/requiemoftheunseen" target="_blank" class="brutal-button" data-i18n="view_game">View Game</a>
             </div>
             
             <div class="brutal-box span-2">
-                <div class="project-title">2D Game Engine</div>
-                <div class="project-desc">A simple 2D game engine in Java, featuring game loop management, sprite rendering, collision detection, and user input handling.</div>
+                <div class="project-title" data-i18n="project4_title">2D Game Engine</div>
+                <div class="project-desc" data-i18n="project4_desc">A simple 2D game engine in Java, featuring game loop management, sprite rendering, collision detection, and user input handling.</div>
                 <div class="tech-stack">
                     <span class="tech-badge">Java</span>
                     <span class="tech-badge">LWJGL</span>
                     <span class="tech-badge">IMGUI</span>
                     <span class="tech-badge">OpenGL</span>
                 </div>
-                <a href="https://github.com/Condorbox/HexEngine-MarioGame" target="_blank" class="brutal-button">View Project</a>
+                <a href="https://github.com/Condorbox/HexEngine-MarioGame" target="_blank" class="brutal-button" data-i18n="view_project">View Project</a>
             </div>
             
             <div class="brutal-box span-2 tall">
-                <div class="project-title">DynaHex: A Physics Engine</div>
-                <div class="project-desc">A custom C++ physics engine inspired by Ian Millington’s "Game Physics Engine Development".</div>
+                <div class="project-title" data-i18n="project5_title">DynaHex: A Physics Engine</div>
+                <div class="project-desc" data-i18n="project5_desc">A custom C++ physics engine inspired by Ian Millington's "Game Physics Engine Development".</div>
                 <div class="tech-stack">
                     <span class="tech-badge">C++</span>
                     <span class="tech-badge">Game Physics</span>
                     <span class="tech-badge">RigidBody</span>
                     <span class="tech-badge">Collision Detection</span>
                 </div>
-                <a href="https://github.com/Condorbox/DynaHex" target="_blank" class="brutal-button">View Project</a>
+                <a href="https://github.com/Condorbox/DynaHex" target="_blank" class="brutal-button" data-i18n="view_project">View Project</a>
             </div>
             
             <div class="brutal-box span-2">
-                <div class="project-title">Poligonal Defenders</div>
-                <div class="project-desc">A fast-paced strategy game where players build structures that serve both as defenses and weapons. Created for UJI Game Jam 2024.</div>
+                <div class="project-title" data-i18n="project6_title">Poligonal Defenders</div>
+                <div class="project-desc" data-i18n="project6_desc">A fast-paced strategy game where players build structures that serve both as defenses and weapons. Created for UJI Game Jam 2024.</div>
                 <div class="tech-stack">
                     <span class="tech-badge">Unity</span>
                     <span class="tech-badge">C#</span>
                     <span class="tech-badge">Game Jam</span>
                 </div>
-                <a href="https://condorbox.itch.io/poligonal-defenders" target="_blank" class="brutal-button">View Game</a>
+                <a href="https://condorbox.itch.io/poligonal-defenders" target="_blank" class="brutal-button" data-i18n="view_game">View Game</a>
             </div>
         </div>
     </section>
     
     <section id="about" style="margin: 3rem 0;">
-        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);">About Me</h2>
+        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);" data-i18n="about_me">About Me</h2>
         
         <div class="bento-grid">
             <div class="brutal-box span-2">
-                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Skills</h3>
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);" data-i18n="skills">Skills</h3>
                 <ul style="list-style-type: none; font-family: var(--mono-font);">
-                    <li style="margin-bottom: 0.5rem;">Java</li>
-                    <li style="margin-bottom: 0.5rem;">Python</li>
-                    <li style="margin-bottom: 0.5rem;">C#</li>
-                    <li style="margin-bottom: 0.5rem;">C/C++</li>
-                    <li style="margin-bottom: 0.5rem;">SQL</li>
-                    <li style="margin-bottom: 0.5rem;">Unity</li>
-                    <li style="margin-bottom: 0.5rem;">Git & Version Control</li>
-                    <li style="margin-bottom: 0.5rem;">Full-Stack Development</li>
+                    <li style="margin-bottom: 0.5rem;" data-i18n="skill_java">Java</li>
+                    <li style="margin-bottom: 0.5rem;" data-i18n="skill_python">Python</li>
+                    <li style="margin-bottom: 0.5rem;" data-i18n="skill_csharp">C#</li>
+                    <li style="margin-bottom: 0.5rem;" data-i18n="skill_cpp">C/C++</li>
+                    <li style="margin-bottom: 0.5rem;" data-i18n="skill_sql">SQL</li>
+                    <li style="margin-bottom: 0.5rem;" data-i18n="skill_unity">Unity</li>
+                    <li style="margin-bottom: 0.5rem;" data-i18n="skill_git">Git & Version Control</li>
+                    <li style="margin-bottom: 0.5rem;" data-i18n="skill_fullstack">Full-Stack Development</li>
                 </ul>
             </div>
             
             <div class="brutal-box span-4">
-                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">My Journey</h3>
-                <p style="line-height: 1.6; margin-bottom: 1rem;">
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);" data-i18n="my_journey">My Journey</h3>
+                <p style="line-height: 1.6; margin-bottom: 1rem;" data-i18n="journey_p1">
                     Hi there! I'm Manuel, a developer with a background in Computational Mathematics and Computer Science, specializing in game development and software engineering.
                 </p>
-                <p style="line-height: 1.6;">
+                <p style="line-height: 1.6;" data-i18n="journey_p2">
                     Currently, I'm studying Computational Mathematics and always eager to learn more. 
-                    When I’m not coding, I’m exploring games, reading, waching movies, or experimenting with new tech.
+                    When I'm not coding, I'm exploring games, reading, waching movies, or experimenting with new tech.
                 </p>
             </div>
             
             <div class="brutal-box span-3">
-                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Work Experience</h3>
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);" data-i18n="work_experience">Work Experience</h3>
                 <div style="margin-bottom: 1.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                        <strong style="font-family: var(--mono-font);">Full-Stack Developer</strong>
-                        <span style="font-family: var(--mono-font);">June 2024 - Aug 2024</span>
+                        <strong style="font-family: var(--mono-font);" data-i18n="job1_title">Full-Stack Developer</strong>
+                        <span style="font-family: var(--mono-font);" data-i18n="job1_date">June 2024 - Aug 2024</span>
                     </div>
-                    <div>Ambimetrics</div>
+                    <div data-i18n="job1_company">Ambimetrics</div>
                 </div>
                 
                 <div style="margin-bottom: 1.5rem;">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                        <strong style="font-family: var(--mono-font);">Computer Engineer Internship</strong>
-                        <span style="font-family: var(--mono-font);">Feb 2024 - June 2024</span>
+                        <strong style="font-family: var(--mono-font);" data-i18n="job2_title">Computer Engineer Internship</strong>
+                        <span style="font-family: var(--mono-font);" data-i18n="job2_date">Feb 2024 - June 2024</span>
                     </div>
-                    <div>Ambimetrics</div>
+                    <div data-i18n="job2_company">Ambimetrics</div>
                 </div>
             </div>
             
             <div class="brutal-box span-3">
-                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Education</h3>
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);" data-i18n="education">Education</h3>
                 <div style="margin-bottom: 1rem;">
-                    <strong style="font-family: var(--mono-font);">B.E Computational Mathematics</strong>
-                    <div>Jaume I University, 2022 - present</div>
+                    <strong style="font-family: var(--mono-font);" data-i18n="edu1_title">B.E Computational Mathematics</strong>
+                    <div data-i18n="edu1_place">Jaume I University, 2022 - present</div>
                 </div>
                 
                 <div>
-                    <strong style="font-family: var(--mono-font);">B.E Computer Engineering</strong>
-                    <div>Jaume I University, 2020 - 2024</div>
-                    <div>Mobility program at Sejong University in Seoul, South Korea, 2023 - 2024</div>
-                    <div>Award for academic excellence, 2024</div>
+                    <strong style="font-family: var(--mono-font);" data-i18n="edu2_title">B.E Computer Engineering</strong>
+                    <div data-i18n="edu2_place">Jaume I University, 2020 - 2024</div>
+                    <div data-i18n="edu2_mobility">Mobility program at Sejong University in Seoul, South Korea, 2023 - 2024</div>
+                    <div data-i18n="edu2_award">Award for academic excellence, 2024</div>
                 </div>
             </div>
         </div>
     </section>
     
     <section id="contact" style="margin: 3rem 0;">
-        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);">Get In Touch</h2>
+        <h2 style="margin-bottom: 1.5rem; text-transform: uppercase; font-family: var(--heading-font);" data-i18n="get_in_touch">Get In Touch</h2>
         
         <div class="bento-grid">
             <div class="brutal-box span-4">
                 <form id="contactForm">
                     <div style="margin-bottom: 1rem;">
-                        <label for="name" class="brutal-label">Name</label>
-                        <input type="text" name="name" placeholder="Your name" id="name" class="brutal-input" required>
-                        <div id="nameError" class="error-message" style="display: none;">Please enter your name</div>
+                        <label for="name" class="brutal-label" data-i18n="form_name">Name</label>
+                        <input type="text" name="name" placeholder="Your name" id="name" class="brutal-input" required data-i18n-placeholder="placeholder_name">
+                        <div id="nameError" class="error-message" style="display: none;" data-i18n="error_name">Please enter your name</div>
                     </div>
                     
                     <div style="margin-bottom: 1rem;">
-                        <label for="email" class="brutal-label">Email</label>
-                        <input type="email" name="email" placeholder="Your email" id="email" class="brutal-input" required>
-                        <div id="emailError" class="error-message" style="display: none;">Please enter a valid email</div>
+                        <label for="email" class="brutal-label" data-i18n="form_email">Email</label>
+                        <input type="email" name="email" placeholder="Your email" id="email" class="brutal-input" required data-i18n-placeholder="placeholder_email">
+                        <div id="emailError" class="error-message" style="display: none;" data-i18n="error_email">Please enter a valid email</div>
                     </div>
                     
                     <div style="margin-bottom: 1rem;">
-                        <label for="message" class="brutal-label">Message</label>
+                        <label for="message" class="brutal-label" data-i18n="form_message">Message</label>
                         <textarea name="message" id="message" rows="5" class="brutal-input" required></textarea>
-                        <div id="messageError" class="error-message" style="display: none;">Please enter a message</div>
+                        <div id="messageError" class="error-message" style="display: none;" data-i18n="error_message">Please enter a message</div>
                     </div>
                     
-                    <button type="submit" id="submitBtn" class="brutal-button">Send Message</button>
+                    <button type="submit" id="submitBtn" class="brutal-button" data-i18n="send_message">Send Message</button>
                 </form>
             </div>
             
             <div class="brutal-box span-2">
-                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);">Contact Info</h3>
-                <p style="margin-bottom: 0.3rem; font-family: var(--mono-font);"><strong>Email:</strong> <span style="font-size: 0.9rem;">manuelmartinezderamon@gmail.com</span></p>
+                <h3 style="margin-bottom: 1rem; font-family: var(--heading-font);" data-i18n="contact_info">Contact Info</h3>
+                <p style="margin-bottom: 0.3rem; font-family: var(--mono-font);"><strong data-i18n="email_label">Email:</strong> <span style="font-size: 0.9rem;">manuelmartinezderamon@gmail.com</span></p>
                 <div><br></div>
                 <div><br></div>
                 <div><br></div>
                 <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="https://github.com/Condorbox" target="_blank" class="brutal-button" style="margin-top: 0;">GitHub</a>
-                    <a href="https://condorbox.itch.io/" target="_blank" class="brutal-button" style="margin-top: 0;">itch.io</a>
-                    <a href="https://condorbox.itch.io/" target="_blank" class="brutal-button" style="margin-top: 0;">LinkedIn</a>
+                    <a href="https://github.com/Condorbox" target="_blank" class="brutal-button" style="margin-top: 0;" data-i18n="github">GitHub</a>
+                    <a href="https://condorbox.itch.io/" target="_blank" class="brutal-button" style="margin-top: 0;" data-i18n="itchio">itch.io</a>
+                    <a href="https://condorbox.itch.io/" target="_blank" class="brutal-button" style="margin-top: 0;" data-i18n="linkedin">LinkedIn</a>
                 </div>
                 <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem;">
-                    <a href="#" download class="brutal-button cv-button">
+                    <a href="#" download class="brutal-button cv-button" data-i18n="download_cv">
                         Download CV
                     </a>
                 </div>
@@ -251,8 +255,8 @@
     
     <footer class="brutal-footer">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <div style="font-family: var(--mono-font);">© <span id="current-year"></span> Manuel Developer. All rights reserved.</div>
-            <a href="#nav-bar" class="brutal-button">Back to Top</a>
+            <div style="font-family: var(--mono-font);">© <span id="current-year"></span> <span data-i18n="copyright">Manuel Developer. All rights reserved.</span></div>
+            <a href="#nav-bar" class="brutal-button" data-i18n="back_to_top">Back to Top</a>
         </div>
     </footer>
 

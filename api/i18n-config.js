@@ -2,7 +2,7 @@ import i18n from "i18n";
 import path from 'path';
 
 i18n.configure({
-    locales: ['en', 'es', 'fr', 'de', 'zh'],
+    locales: ['en', 'es'],
     directory: path.join(process.cwd(), 'locales'),
     defaultLocale: 'en',
     cookie: 'locale',
