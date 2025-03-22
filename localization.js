@@ -162,8 +162,11 @@ async function translatePageElements() {
     }
   }
 }  
-  
 
 document.addEventListener('DOMContentLoaded', function() {
-    translatePageElements();
+  translatePageElements();
+
+  // Change cv language
+  const cvLink = document.getElementById('cv-download');
+  cvLink.href = `files/Manuel Martínez cv_${currentLocale}.pdf`;
 });
