@@ -74,5 +74,8 @@
 	"intro_and": "y",
 	"intro_adj3": "centradas en el usuario",
 	"intro_middle": "aplicaciones web con tecnologías modernas. Actualmente trabajo en sistemas que",
-	"intro_highlight": "marcan la diferencia"
+	"intro_highlight": "marcan la diferencia",
+	"project7_title": "Hextune",
+	"project7_desc": "Reproductor de música para la terminal",
+	"featured": "DESTACADO"
 }

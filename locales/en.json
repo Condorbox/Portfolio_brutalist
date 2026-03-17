@@ -6,8 +6,8 @@
 	"hero_name": "Manuel Developer",
 	"hero_title": "Software Engineer & Game Developer",
 	"tagline_start": "I write code that",
-    "tagline_highlight": "works",
-    "tagline_end": "Sometimes, it even looks good.",
+	"tagline_highlight": "works",
+	"tagline_end": "Sometimes, it even looks good.",
 	"projects_intro": "Selected Projects",
 	"project1_title": "Spotify to YouTube Playlist Converter",
 	"project1_desc": "A Python-based automation tool that convert a Spotify playlist to a YouTube playlist, with an option to download it.",
@@ -74,5 +74,8 @@
 	"intro_and": "and",
 	"intro_adj3": "user-focused",
 	"intro_middle": "web applications with modern technologies. Currently working on systems that",
-	"intro_highlight": "make a difference"
+	"intro_highlight": "make a difference",
+	"project7_title": "Hextune",
+	"project7_desc": "Lightweight terminal music player",
+	"featured": "FEATURED"
 }

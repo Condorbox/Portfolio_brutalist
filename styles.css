@@ -149,6 +149,16 @@ body::before {
     display: none;
 }
 
+.brutal-feature {
+    background-color: var(--accent); 
+    color: var(--primary); 
+    font-family: var(--mono-font); 
+    font-size: 0.75rem; 
+    font-weight: bold; 
+    padding: 0.25rem 0.75rem; 
+    border: var(--border);
+}
+
 /* Header */
 header {
     margin-bottom: 2rem;
