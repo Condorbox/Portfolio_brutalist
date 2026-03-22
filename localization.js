@@ -169,4 +169,5 @@ document.addEventListener('DOMContentLoaded', function() {
   // Change cv language
   const cvLink = document.getElementById('cv-download');
   cvLink.href = `files/Manuel Martínez cv_${currentLocale}.pdf`;
+  console.log(`files/Manuel Martínez cv_${currentLocale}.pdf`);
 });

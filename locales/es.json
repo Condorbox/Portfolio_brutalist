@@ -10,7 +10,7 @@
     "tagline_end": "A veces, incluso se ve bien.",
 	"projects_intro": "Proyectos Destacados",
 	"project1_title": "Convertidor de Playlist de Spotify a YouTube",
-	"project1_desc": "Una herramienta en Python que convierte una playlist de Spotify a una de YouTube, con opción de descarga.",
+	"project1_desc": "CLI en Python para sincronizar listas de reproducción de Spotify con YouTube, con actualizaciones incrementales y descargas opcionales. Soporta procesamiento concurrente, descargas reanudables, lógica de reintentos para APIs y un pipeline automatizado de audio con etiquetado de metadatos.",
 	"project2_title": "Behavior Trees",
 	"project2_desc": "Un sistema de IA que utiliza behavior trees en Unity para crear NPCs adaptativos e inteligentes, capaces de tomar decisiones en tiempo real según factores ambientales.",
 	"project3_title": "Requiem of the Unseen",
@@ -46,6 +46,7 @@
 	"education": "Educación",
 	"edu1_title": "Grado en Matemáticas Computacionales",
 	"edu1_place": "Universidad Jaume I, 2022 - presente",
+	"edu1_mobility": "Programa de movilidad en la universidad de Oulu, Oulu, Finlandia, 2025 - 2026",
 	"edu2_title": "Grado en Ingeniería Informática",
 	"edu2_place": "Universidad Jaume I, 2020 - 2024",
 	"edu2_mobility": "Programa de movilidad en la Universidad de Sejong en Seúl, Corea del Sur, 2023 - 2024",
@@ -76,6 +77,6 @@
 	"intro_middle": "aplicaciones web con tecnologías modernas. Actualmente trabajo en sistemas que",
 	"intro_highlight": "marcan la diferencia",
 	"project7_title": "Hextune",
-	"project7_desc": "Reproductor de música para la terminal",
+	"project7_desc": "Reproductor de música ligero para terminal con un navegador TUI, búsqueda difusa y control completo de atajos de teclado configurables.",
 	"featured": "DESTACADO"
 }
