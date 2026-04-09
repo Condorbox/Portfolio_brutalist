@@ -144,6 +144,9 @@ function isValidEmail(email) {
 
 // Get the form by its ID
 const form = document.getElementById('contactForm');
+const sendingText = form?.dataset?.sendingText || 'Sending...';
+const successText = form?.dataset?.successText || 'Message sent successfully!';
+const errorText = form?.dataset?.errorText || 'Error when sending message. Please try again.';
 const msg = document.createElement('div'); // Create a message element
 msg.id = 'responseMessage';
 msg.style.marginTop = '1rem';
@@ -187,8 +190,9 @@ form.addEventListener('submit', async function(e) {
     
     // Disable the submit button and show sending status
     const submitBtn = document.getElementById('submitBtn');
+    const defaultSubmitText = submitBtn.textContent;
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.textContent = sendingText;
     
     fetch('/api/send-email', {
       method: 'POST',
@@ -209,7 +213,7 @@ form.addEventListener('submit', async function(e) {
     .then(function(data) {
       console.log('Message sent successfully', data);
       
-      msg.innerHTML = "Message sent successfully!";
+      msg.textContent = successText;
       msg.style.color = 'green';
         
       form.reset();
@@ -217,17 +221,17 @@ form.addEventListener('submit', async function(e) {
     .catch(function(error) {
       console.error('Error when sending mail', error);
       
-      msg.innerHTML = "Error when sending message. Please try again.";
+      msg.textContent = errorText;
       msg.style.color = 'red';
     })
     .finally(function() {
       // Re-enable the button
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Send Message';
+      submitBtn.textContent = defaultSubmitText;
        
       // Clear the response message after 5 seconds
       setTimeout(function() {
-        msg.innerHTML = "";
+        msg.textContent = "";
       }, 5000);
     });
 });
